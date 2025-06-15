@@ -1,0 +1,14 @@
+[Unit]
+Description=Smart Swap Daemon for Low RAM Auto Swap
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/smart_swapd.sh
+Restart=always
+RestartSec=5
+Nice=5
+TimeoutStopSec=10
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
